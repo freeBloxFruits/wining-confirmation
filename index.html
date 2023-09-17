@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Verification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #232527;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #393b3d;
+            width: 25%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h2, p {
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Winnings Code</h2>
+        <p>Put in a code to get your winnings</p>
+        <input type="text" id="code" placeholder="Enter your winning code" required>
+        <button onclick="submitCode()">Submit</button>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p>You've successfully entered the code. Please wait to receive the item.</p>
+        </div>
+    </div>
+
+    <script>
+        function submitCode() {
+            // Show the modal
+            document.getElementById('modal').style.display = 'flex';
+
+            // Here, you can add the functionality for processing the code (e.g., sending it to a server) if needed.
+        }
+    </script>
+</body>
+</html>
